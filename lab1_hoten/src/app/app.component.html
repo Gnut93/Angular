@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/lab1_hoten/src/styles.css" />
+
+<div class="khung">
+  <div class="thongtin">
+    <h2 class="title">Thông Tin Sinh Viên</h2>
+    <img
+      src="assets/{{ student.image }}"
+      alt=""
+      style="width: 300px; height: 430px"
+    />
+    <ul>
+      <li>Họ Tên: {{ student.name }}</li>
+      <li>Tuổi: {{ student.age }}</li>
+      <li>Address: {{ student.address }}</li>
+      <li>Phone: {{ student.phone }}</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="title">Danh sách nhà khoa học</h2>
+<div class="card">
+  <div class="card-header">Danh Sách Các Nhà Khoa Học Của Việt Nam :</div>
+  <div class="card-body p-0">
+    <div id="ds">
+      {{ render() }}
+    </div>
+  </div>
+  <div class="card-footer">
+    Có <b>{{ listNhaKH.length }}</b> nhà khoa học trong danh sách
+  </div>
+</div>
+
+<h2 class="title">Danh sách sản phẩm</h2>
+
+<div class="container text-center">
+  <div class="row" id="listSP">
+    {{ renderSP() }}
+  </div>
+</div>

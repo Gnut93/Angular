@@ -1,0 +1,28 @@
+<!-- Đoạn mã HTML -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên sản phẩm</th>
+      <th>Hình ảnh</th>
+      <th>Giá</th>
+      <th>Ngày</th>
+      <th>Mô tả</th>
+      <th>Hành Động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sp of listSanPham">
+      <td class="id">{{ sp.id }}</td>
+      <td class="product-name" style="color: blue">{{ sp.tensp }}</td>
+      <td><img src="{{ sp.hinh }}" alt="" width="60px" /></td>
+      <td style="color: tomato">{{ sp.giasp }}</td>
+      <td>{{ sp.ngay | date : "dd/MM/yyyy" }}</td>
+      <td class="description">{{ sp.mota }}</td>
+      <td>
+        <a href="../sanpham-sua/sanpham-sua.component.html" (click)="suaSP(sp)">Sửa</a> &nbsp;
+        <a href="" (click)="xoaSP(sp.id)">Xóa</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

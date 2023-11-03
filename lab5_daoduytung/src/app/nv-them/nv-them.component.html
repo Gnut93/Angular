@@ -1,0 +1,33 @@
+<form class="col-8 m-auto border border-primary p-2" #nhanVienForm="ngForm" (ngSubmit)=" themNhanVien()">
+    <div class="form-group">
+        <label for="tenda">Tên Nhân Viên</label>
+        <input name="tennhanvien" [(ngModel)]="nv.hovaten" type="text" class="form-control" required #loiten ="ngModel">
+        <em *ngIf="submitted == true && loiten.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="ngaysinh">Ngày Sinh</label>
+        <input name="ngaysinh" [(ngModel)]="nv.ngaysinh" type="date" class="form-control" required #loingay ="ngModel">
+        <em *ngIf="submitted == true && loingay.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="phai">Giới Tính</label>
+        <select name="phai" [(ngModel)]="nv.phai" class="form-control" #loigioi ="ngModel">
+            <option [value]="true">Nam</option>
+            <option [value]="false">Nữ</option>
+        </select>
+        <em *ngIf="submitted == true && loigioi.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="khuvuc">Khu Vực</label>
+        <select name="khuvuc" [(ngModel)]="nv.khuvuc" class="form-control" required #loikhuvuc="ngModel">
+            <option value="">Chọn Khu Vực</option>
+            <option value="Bắc">Bắc</option>
+            <option value="Nam">Nam</option>
+            <option value="Trung">Trung</option>
+        </select>
+        <em *ngIf="submitted == true && loikhuvuc.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <button class="btn btn-warning py-2 px-5"  >Thêm Nhân Viên</button>
+</form>
+
+

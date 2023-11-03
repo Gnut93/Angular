@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let sp of listSP">
+        <div class="product-card mb-4">
+          <img src="{{sp.urlImage}}" class="product-image" align="left">
+          <div class="product-details">
+            <h4 class="product-title"><a [routerLink]="['/sanpham', sp.id]">{{sp.tensp}}</a></h4>
+            <p class="product-description">{{sp.mota}}</p>
+            <p class="product-price">{{sp.giasp}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,31 @@
+
+<table class="table table-bordered border border-primary mt-3" style="height: 350px;">
+  <caption align="top" class="bg-warning p-2">DANH SÁCH DỰ ÁN
+    <label class="float-end">
+      <input name="tk" [(ngModel)]="tukhoa" (keyup)="locDuAn()" >
+      <em class="text-danger">{{tukhoa}}</em>
+  </label>
+  </caption>
+  
+  <tr>
+    <th> id </th>
+    <th> Tên dự án</th>
+    <th> Ngày start</th>
+    <th> Tiền</th>
+    <th> leader</th>
+    <th> thành viên</th>
+    <th> Sửa</th>
+    <th> Xóa</th>
+  </tr>
+  <tr *ngFor="let da of listDuAn">
+    <td> {{da.id}} </td>
+    <td>{{da.tenDuAn}}</td>
+    <td> {{da.ngayStart | date:'dd/MM/Y' }}</td>
+    <td> {{da.tien}}</td>
+    <td> {{getTenNhanVien(da.leader)}}</td>
+    <td> {{getThanhVien(da.thanhvien)}}</td>
+    <td><a [routerLink]="['/duan/sua',da.id]" href="#"><i class="bi bi-pencil" ></i></a></td>
+    <td><a href="#" (click)="xoaDuAn(da.id)"><i class="bi bi-trash" ></i></a></td>
+  </tr>
+</table>
+

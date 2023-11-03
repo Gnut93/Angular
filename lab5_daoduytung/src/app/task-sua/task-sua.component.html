@@ -1,0 +1,43 @@
+<form class="col-8 m-auto border border-primary p-2" #taskForm="ngForm" (ngSubmit)="capnhatTask()">
+    <div class="form-group">
+        <label for="tentask">Tên Task</label>
+        <input name="tentask" [(ngModel)]="task.tenTask" type="text" class="form-control" required #loiten = "ngModel" >
+        <em *ngIf="submitted == true && loiten.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="idduan">Dự Án</label>
+        <select name="idduan" [(ngModel)]="task.duAnID" class="form-control" required #loiduan = "ngModel">
+            <option *ngFor="let da of listDuAn" [value]="da.id">{{ da.tenDuAn }}</option>
+        </select>
+        <em *ngIf="submitted == true && loiduan.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="nhanvien">Nhân Viên</label>
+        <select name="nhanvien" [(ngModel)]="task.nhanvienID" class="form-control" required #loinhanvien = "ngModel">
+            <option *ngFor="let nv of listNhanVien" [value]="nv.id">{{ nv.hovaten }}</option>
+        </select>
+        <em *ngIf="submitted == true && loinhanvien.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="mota">Mô Tả</label>
+        <input name="mota" [(ngModel)]="task.moTa" type="text" class="form-control" required #loimota = "ngModel">
+        <em *ngIf="submitted == true && loimota.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="trangthai">Trạng Thái</label>
+        <select name="trangthai" [(ngModel)]="task.status" class="form-control" required #loitrangthai = "ngModel">
+            <option [value]="1">Không Hoàn Thành</option>
+            <option [value]="0">Hoàn Thành</option>
+        </select>
+        <em *ngIf="submitted == true && loitrangthai.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <div class="form-group">
+        <label for="priority">Độ Ưu Tiên</label>
+        <select name="priority" [(ngModel)]="task.priority" class="form-control" required #loiuutien = "ngModel">
+            <option [value]="1">Ưu Tiên</option>
+            <option [value]="2">Không Ưu Tiên</option>
+        </select>
+        <em *ngIf="submitted == true && loiuutien.invalid" class="text-danger">Vui lòng không bỏ trống.</em>
+    </div>
+    <button class="btn btn-warning py-2 px-5" >Cập Nhật Task</button>
+</form>

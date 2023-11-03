@@ -1,0 +1,64 @@
+<!-- sanpham-sua.component.html-->
+
+<!-- <form
+  #frmSuaSP="ngForm"
+  (ngSubmit)="spSua(frmSuaSP.value)"
+  class="col-6 m-auto"
+>
+  <p>
+    <label>id SP</label>
+    <input
+      name="id"
+      [(ngModel)]="sp.id"
+      readonly
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p>
+    <label>Tên SP</label>
+    <input
+      name="tensp"
+      [(ngModel)]="sp.tensp"
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p>
+    <label>Giá SP</label>
+    <input
+      name="giasp"
+      [(ngModel)]="sp.giasp"
+      class="form-control"
+      type="number"
+    />
+  </p>
+  <p><button type="submit" class="btn btn-success">Sửa SP</button></p>
+</form> -->
+
+<div class="modal">
+  <form #modalForm="ngForm" (ngSubmit)="onSubmit()" (ngSubmit)="spSua(frmSuaSP.value)>
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" [(ngModel)]="sp.id" required />
+
+    <label for="tensp">Tên SP:</label>
+    <input
+      type="text"
+      id="tensp"
+      name="tensp"
+      [(ngModel)]="sp.tensp"
+      required
+    />
+
+    <label for="giasp">Giá SP:</label>
+    <input
+      type="number"
+      id="giasp"
+      name="giasp"
+      [(ngModel)]="sp.giasp"
+      required
+    />
+
+    <button type="submit">Lưu</button>
+  </form>
+</div>

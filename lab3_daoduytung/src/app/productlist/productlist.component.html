@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+  <tr>
+    <th style="text-align: center">Hình Ảnh</th>
+    <th style="text-align: center">Tên SP</th>
+    <th style="text-align: center">Code</th>
+    <th style="text-align: center">Ngày</th>
+    <th style="text-align: center">Giá</th>
+    <th style="text-align: center">Đánh giá</th>
+    <th style="text-align: center">Chi tiết</th>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td style="text-align: center">
+      <img [src]="p.urlImage" width="60px" height="60px" />
+    </td>
+    <td style="text-align: center">{{ p.tensp }}</td>
+    <td style="text-align: center">{{ p.code }}</td>
+    <td style="text-align: center">{{ p.ngay | date : "dd/MM/yyyy" }}</td>
+    <td style="color: tomato; text-align: center">
+      {{ p.giasp.toLocaleString("us") }}
+    </td>
+    <td style="text-align: center">{{ p.starRate }}</td>
+    <td style="text-align: center" (click)="xemChiTiet(p.id)">
+      {{ p.tensp | uppercase }}
+    </td>
+  </tr>
+</table>

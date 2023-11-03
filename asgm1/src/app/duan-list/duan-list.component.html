@@ -1,0 +1,40 @@
+<table class="table table-bordered border border-secondary mt-3">
+  <caption
+    align="top"
+    class="bg-secondary p-2"
+    style="text-align: center; color: aliceblue"
+  >
+    DANH SÁCH DỰ ÁN
+  </caption>
+  Tìm Kiếm
+  <input
+    type="text"
+    [(ngModel)]="listFilter"
+    (input)="filterDuAnByName()"
+    placeholder="nhập tìm kiếm...."
+  />
+
+  <tr>
+    <th>id</th>
+    <th>Hình Ảnh</th>
+
+    <th>Tên dự án</th>
+
+    <th>Ngày start</th>
+
+    <th>Tiền</th>
+  </tr>
+
+  <tr *ngFor="let da of listDuAn">
+    <td>{{ da.id }}</td>
+    <td><img src="{{ da.anh }}" alt="" width="100px" /></td>
+
+    <td>
+      <a href="" [routerLink]="['/duan', da.id]">{{ da.tenDuAn }}</a>
+    </td>
+
+    <td>{{ da.ngayStart | date : "dd/MM/yyyy" }}</td>
+
+    <td style="color: tomato">{{ da.tien.toLocaleString("vi") }}</td>
+  </tr>
+</table>

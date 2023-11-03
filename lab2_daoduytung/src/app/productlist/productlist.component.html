@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="card-header">DANH SÁCH SẢN PHẨM</div>
+  <div style="margin: 10px; text-align: center">
+    <label class="text-center">
+      Tìm kiếm:
+      <input name="tk" [(ngModel)]="tukhoa" (keyup)="locSP()" />
+      <em class="text-danger">{{ tukhoa }}</em>
+    </label>
+  </div>
+  <button
+    (click)="toggleHinhAnh()"
+    class="btn btn-primary"
+    style="width: 8%; margin-left: 20px"
+  >
+    Ẩn Hiện
+  </button>
+
+  <div class="card-body">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Hình</th>
+
+          <th>Tên SP</th>
+
+          <th>Mã SP</th>
+
+          <th>Ngày</th>
+
+          <th>Giá</th>
+
+          <th>Đánh giá</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of products">
+          <!-- dòng dữ liệu-->
+          <!-- Thêm nút để ẩn/hiện hình ảnh -->
+
+          <td>
+            <img
+              *ngIf="hienHinhAnh"
+              src="{{ p.urlImage }}"
+              alt=""
+              height="50px"
+            />
+          </td>
+
+          <td>{{ p.tensp | uppercase }}</td>
+
+          <td>{{ p.code }}</td>
+
+          <td>{{ p.ngay | date : "dd/MM/Y" }}</td>
+
+          <td style="color: tomato">{{ tinhGiaVN(p) }}</td>
+          <td>
+            <div
+              class="crop"
+              [style.width.px]="(p.starRate * 90) / 5"
+              title="rating"
+            >
+              <div style="width: 90px; color: rgb(255, 230, 0)">
+                <i class="bi bi-star"></i> <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    Số lượng sản phẩm: <b>{{ products.length }}</b>
+  </div>
+</div>

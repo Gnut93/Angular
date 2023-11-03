@@ -1,0 +1,84 @@
+<form
+  class="col-8 m-auto border border-primary p-2"
+  #duanForm="ngForm"
+  (ngSubmit)="themDuAn()"
+>
+  <div class="form-group">
+    <label for="tenda">Tên Dự Án</label>
+    <input
+      name="tenDuAn"
+      [(ngModel)]="da.tenDuAn"
+      type="text"
+      class="form-control"
+      required
+      #loitenduan="ngModel"
+    />
+    <em *ngIf="submitted == true && loitenduan.invalid" class="text-danger"
+      >Vui lòng không bỏ trống.</em
+    >
+  </div>
+  <div class="form-group">
+    <label for="ngay">Ngày</label>
+    <input
+      name="ngay"
+      [(ngModel)]="da.ngayStart"
+      type="date"
+      class="form-control"
+      required
+      #loingay="ngModel"
+    />
+    <em *ngIf="submitted == true && loingay.invalid" class="text-danger"
+      >Vui lòng không bỏ trống.</em
+    >
+  </div>
+  <div class="form-group">
+    <label for="giada">Giá</label>
+    <input
+      name="giada"
+      [(ngModel)]="da.tien"
+      type="number"
+      class="form-control"
+      required
+      #loigia="ngModel"
+    />
+    <em *ngIf="submitted == true && loigia.invalid" class="text-danger"
+      >Vui lòng không bỏ trống.</em
+    >
+  </div>
+  <div class="form-group">
+    <label for="leader">Leader</label>
+    <select
+      name="leader"
+      [(ngModel)]="da.leader"
+      class="form-control"
+      required
+      #loileader="ngModel"
+    >
+      <option *ngFor="let nv of listNhanVien" [value]="nv.id">
+        {{ nv.hovaten }}
+      </option>
+    </select>
+    <em *ngIf="submitted == true && loileader.invalid" class="text-danger"
+      >Vui lòng không bỏ trống.</em
+    >
+  </div>
+  <div class="form-group">
+    <label for="thanhvien">Thành Viên</label>
+    <select
+      name="thanhvien"
+      multiple
+      [(ngModel)]="da.thanhvien"
+      class="form-control"
+      required
+      #loithanhvien="ngModel"
+    >
+      <option *ngFor="let nv of listNhanVien" [value]="nv.id">
+        {{ nv.hovaten }}
+      </option>
+    </select>
+    <em *ngIf="submitted == true && loithanhvien.invalid" class="text-danger"
+      >Vui lòng không bỏ trống.</em
+    >
+  </div>
+  <button class="btn btn-warning py-2 px-5">Thêm Dự Án</button>
+</form>

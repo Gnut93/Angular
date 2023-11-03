@@ -1,0 +1,19 @@
+<h4 class="bg-warning mt-3 p-2">DANH SÁCH TASK</h4>
+<div *ngFor="let task of listTask" class="mb-3">
+    <div> 
+        <b>{{task.id}} {{task.tenTask}} </b><br>
+        {{task.moTa}} 
+    </div>
+    <div class="mb-3 border-bottom row">
+        <div class="col-6">
+        priority: {{ task.priority === 1 ? 'Ưu Tiên' : 'Không Ưu Tiên' }}  <br>
+        Status: {{task.status === 0 ? 'Hoàn Thành' : ' Chưa Hoàn Thành'}}
+        </div>
+        <div class="col-6">
+        Nhân viên  {{getTenNhanVien(task.nhanvienID)}}<br>
+        Dự án:{{ getTenDuAn(task.duAnID)}}
+        </div>
+        <a [routerLink]="['/task/sua',task.id]" href="#"><i class="bi bi-pencil custom-icon"></i></a>
+        <a href="#" (click)="xoaTask(task.id)"><i class="bi bi-trash custom-icon"></i></a>
+    </div>
+</div>

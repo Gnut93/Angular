@@ -1,0 +1,68 @@
+/* CSS cho tiêu đề */
+.product-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* CSS cho bảng */
+  .table-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    
+  }
+  
+  /* CSS cho hàng đầu tiên */
+  .bg-warning th {
+    background-color: #7c7c7c;
+    color: #ffffff;
+  }
+  
+  /* CSS cho hình ảnh sản phẩm */
+  .product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .product-image {
+    max-width: 50px;
+    height: auto;
+  }
+  
+  /* CSS cho tên sản phẩm */
+  .product-name a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* CSS cho ngày sản phẩm */
+  .product-date,
+  .product-price,
+  .product-actions {
+    text-align: center;
+  }
+  
+  /* CSS cho giá sản phẩm */
+  .product-price {
+    font-weight: bold;
+    color: #ff5722;
+  }
+  
+  /* CSS cho các biểu tượng hành động */
+  .product-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .product-actions a:last-child {
+    margin-right: 0;
+  }
+  

@@ -1,0 +1,36 @@
+<table class="table table-bordered border border-primary mt-3">
+  <caption align="top" class="bg-secondary p-2">
+    DANH SÁCH NHÂN VIÊN
+  </caption>
+
+  <tr>
+    <th style="text-align: center">id</th>
+    <th style="text-align: center">Hình Ảnh</th>
+
+    <th style="text-align: center">Họ tên</th>
+
+    <th style="text-align: center">Ngày sinh</th>
+
+    <th style="text-align: center">Giới Tính</th>
+
+    <th style="text-align: center">Khu vực</th>
+  </tr>
+
+  <tr *ngFor="let nv of listNhanVien">
+    <td style="text-align: center">{{ nv.id }}</td>
+    <td style="text-align: center">
+      <img src="{{ nv.anh }}" alt="" style="width: 100px" />
+    </td>
+
+    <td style="text-align: center">{{ nv.ho }} {{ nv.ten }}</td>
+
+    <td style="text-align: center">{{ nv.ngaysinh | date : "dd/MM/yyyy" }}</td>
+
+    <td style="text-align: center">
+      <span *ngIf="isNam(nv)">Nam</span>
+      <span *ngIf="!isNam(nv)">Nữ</span>
+    </td>
+
+    <td style="text-align: center">{{ nv.khuvuc }}</td>
+  </tr>
+</table>

@@ -1,0 +1,37 @@
+/* Định dạng bảng */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Định dạng hàng đầu của bảng (header) */
+.table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Định dạng các hàng dữ liệu */
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+/* Định dạng ô dữ liệu */
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Định dạng ô dữ liệu của cột "Chi tiết" */
+.table td:last-child {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #007bff;
+}

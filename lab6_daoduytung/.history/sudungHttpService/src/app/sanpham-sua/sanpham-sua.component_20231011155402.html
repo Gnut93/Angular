@@ -1,0 +1,41 @@
+<form
+  #frmSuaSP="ngForm"
+  (ngSubmit)="spSua(frmSuaSP.value)"
+  class="col-6 m-auto"
+>
+  <p *ngIf="sp.id">
+    <!-- Kiểm tra nếu tồn tại id -->
+    <label>id SP</label>
+    <input
+      name="id"
+      [(ngModel)]="sp.id"
+      readonly
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p *ngIf="sp.id">
+    <!-- Kiểm tra nếu tồn tại id -->
+    <label>Tên SP</label>
+    <input
+      name="tensp"
+      [(ngModel)]="sp.tensp"
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p *ngIf="sp.id">
+    <!-- Kiểm tra nếu tồn tại id -->
+    <label>Giá SP</label>
+    <input
+      name="giasp"
+      [(ngModel)]="sp.giasp"
+      class="form-control"
+      type="number"
+    />
+  </p>
+  <p *ngIf="sp.id">
+    <!-- Kiểm tra nếu tồn tại id -->
+    <button type="submit" class="btn btn-success">Sửa SP</button>
+  </p>
+</form>

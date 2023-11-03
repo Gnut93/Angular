@@ -1,0 +1,12 @@
+td {
+  text-align: center;
+}
+td:nth-child(1) {
+  width: 5%;
+}
+th {
+  text-align: center;
+}
+table {
+  border: 1px solid gray;
+}

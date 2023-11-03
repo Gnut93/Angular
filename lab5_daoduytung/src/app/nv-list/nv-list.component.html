@@ -1,0 +1,71 @@
+<div>
+  <div class="search">
+    <label for="khuVucSelect">Chọn khu vực:</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      [(ngModel)]="khuVucDuocChon"
+    >
+      <option value="">Khu vực</option>
+      <option *ngFor="let region of khuVucOptions" [value]="region">
+        {{ region }}
+      </option>
+    </select>
+    <button
+      class="btn btn-warning btn-outline-success"
+      (click)="timKiemTheoKhuVuc()"
+    >
+      Tìm
+    </button>
+  </div>
+  <div *ngIf="coKetQuaTimKiem">
+    <table class="table table-bordered border border-primary mt-3">
+      <caption align="top" class="bg-warning p-2">
+        <h3>DANH SÁCH NHÂN VIÊN</h3>
+      </caption>
+      <tr>
+        <th>id</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Phái</th>
+        <th>Khu vực</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+      <tr *ngFor="let nv of ketQuaTimKiem">
+        <td>{{ nv.id }}</td>
+        <td>{{ nv.hovaten }}</td>
+        <td>{{ nv.ngaysinh }}</td>
+        <td>{{ nv.phai ? "Nam" : "Nữ" }}</td>
+        <td>{{ nv.khuvuc }}</td>
+        <td><a [routerLink]="['/nhanvien/sua',nv.id]" href="#"><i class="bi bi-pencil" ></i></a></td>
+        <td><a href="#" (click)="xoaNhanVien(nv.id)"><i class="bi bi-trash" ></i></a></td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="!coKetQuaTimKiem">
+    <table class="table table-bordered border border-primary mt-3" style="height: 350px;">
+      <caption align="top" class="bg-warning p-2">
+        DANH SÁCH NHÂN VIÊN
+      </caption>
+      <tr>
+        <th>id</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Phái</th>
+        <th>Khu vực</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+      <tr *ngFor="let nv of listNhanVien">
+        <td>{{ nv.id }}</td>
+        <td>{{ nv.hovaten }}</td>
+        <td>{{ nv.ngaysinh }}</td>
+        <td>{{ nv.phai ? "Nam" : "Nữ" }}</td>
+        <td>{{ nv.khuvuc }}</td>
+        <td><a [routerLink]="['/nhanvien/sua',nv.id]" href="#"><i class="bi bi-pencil" ></i></a></td>
+        <td><a href="#" (click)="xoaNhanVien(nv.id)"><i class="bi bi-trash" ></i></a></td>
+      </tr>
+    </table>
+  </div>
+</div>

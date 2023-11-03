@@ -1,0 +1,37 @@
+<!-- sanpham-sua.component.html-->
+
+<form
+  #frmSuaSP="ngForm"
+  (ngSubmit)="spSua(frmSuaSP.value)"
+  class="col-6 m-auto"
+>
+  <p>
+    <label>id SP</label>
+    <input
+      name="id"
+      [(ngModel)]="sp.id"
+      readonly
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p>
+    <label>Tên SP</label>
+    <input
+      name="tensp"
+      [(ngModel)]="sp.tensp"
+      class="form-control"
+      type="text"
+    />
+  </p>
+  <p>
+    <label>Giá SP</label>
+    <input
+      name="giasp"
+      [(ngModel)]="sp.giasp"
+      class="form-control"
+      type="number"
+    />
+  </p>
+  <p><button type="submit" class="btn btn-success">Sửa SP</button></p>
+</form>

@@ -1,0 +1,29 @@
+/* CSS cho trang chi tiết sản phẩm */
+.product-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-info h4 {
+    font-size: 24px;
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    color: #555;
+  }
+  

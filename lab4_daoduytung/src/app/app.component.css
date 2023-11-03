@@ -1,0 +1,12 @@
+.container { }
+.container >header { 
+    height: 90px;
+    background-color: rgb(0, 0, 0);
+}
+.container >nav { height: 60px;}
+.container > main { display: flex; min-height: 400px;}
+.container > footer { 
+    height: 45px; 
+    line-height: 35px;
+    background-color: black;
+}

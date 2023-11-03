@@ -1,0 +1,22 @@
+/* Định dạng các phần tử <p> */
+p {
+    font-size: 16px;
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Định dạng cho phần tử có idSP */
+p:nth-child(1) {
+    font-weight: bold;
+}
+
+/* Định dạng cho phần tử có Tên SP */
+p:nth-child(2) {
+    color: #007bff; /* Màu văn bản xanh dương */
+}
+
+/* Định dạng cho phần tử có Giá */
+p:nth-child(3) {
+    font-weight: bold;
+    color: #ff5733; /* Màu văn bản cam */
+}
